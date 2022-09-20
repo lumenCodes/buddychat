@@ -1,0 +1,20 @@
+{
+  "name": "buddychat",
+  "version": "1.0.0",
+  "description": "This is a real time chat API.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumenCodes/buddychat.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lumenCodes/buddychat/issues"
+  },
+  "homepage": "https://github.com/lumenCodes/buddychat#readme"
+}
