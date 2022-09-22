@@ -14,3 +14,5 @@ const Messages = mongoose.model('Messages',{
     message: String,
     createdAt: Date
 })
+
+module.exports = {Messages}
