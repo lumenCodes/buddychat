@@ -1,5 +1,6 @@
 const express = require("express")
 const mongoose = require('mongoose')
+require ('dotenv').config()
 
 
 // create an express app
@@ -9,7 +10,6 @@ app.use(express.json)
 // db setup
 
 const dbURI = process.env.DB
-console.log(dbURI)
 async function connect () {
     try {
         await  mongoose.connect(dbURI, () => console.log('connected to db'))
