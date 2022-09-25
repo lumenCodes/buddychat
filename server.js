@@ -1,7 +1,6 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const appRoutes = require("./routes")
-const {schema} = require('mongoose')
 require ('dotenv').config()
 
 
@@ -24,20 +23,6 @@ connect()
 
 
 
-// model for messages
-
-const messageSchema = new Schema({
-    name: String,
-    message: String,
-    createdAt: {
-        type: Date, default: Date.now()
-    }
-})
-
-const Messages = mongoose.model('Messages', messageSchema) 
-
-
-
 // initialize server to listen on a port
 
 port = process.env.PORT || 7000
@@ -47,6 +32,3 @@ app.listen(port, () => {
 })
 
 
-
-
-module.exports = mongoose.model('Messages', messageSchema)

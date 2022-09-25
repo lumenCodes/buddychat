@@ -1,11 +1,11 @@
-const { Messages } = require('./app')
+const Messages  = require('./model')
 
 const {Router} = require('express')
 const appRoutes = Router()
 
 
-appRoutes.get('/home', (req, res)=> {
-    Messages.find()
+appRoutes.get('/home', async (req, res)=> {
+    const messages = await  Messages.find()
     res.send(messages)
 })
 
@@ -13,7 +13,7 @@ appRoutes.post('/chat', (req, res)=>{
     // res.send('succes')
     let message = new Messages(req.body)
     message.save()
-    res.sendStatus(200).body(message)
+    res.send(message)
 })
 
 
