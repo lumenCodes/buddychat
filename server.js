@@ -1,11 +1,15 @@
 const express = require("express")
+const app = express()
+
 const mongoose = require('mongoose')
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
 const appRoutes = require("./routes")
 require ('dotenv').config()
 
 
+
 // create an express app
-const app = express()
 app.use(express.json())
 app.use('/api',appRoutes)
 
@@ -21,7 +25,10 @@ async function connect () { // afunction that will be called whenever the db wan
     }}
 connect()
 
-
+// socket connection
+io.on('connection', ()=> {
+    console.log('Someone id connected on io')
+})
 
 // initialize server to listen on a port
 

@@ -1,4 +1,7 @@
 const app = require('express')
+const ejs = require('ejs')
+
+
 
 // ststic files
 
@@ -9,3 +12,7 @@ app.use('/img', express.static(__dirname  +'public/img'))
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
+
+
+
+//socket.io
